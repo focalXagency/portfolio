@@ -2,8 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     padding-top: 116px;
+    height: 100vh;
 }
 
 .home-section::before {
@@ -24,16 +25,13 @@
 .home-section .home-h1 {
     font-weight: var(--fw-bold);
     color: var(--clr-primary);
-    font-size: 45px;
-    margin-top: 158px;
-    margin-bottom: 39px;
+    font-size: 48px;
 }
 
 .home-section .home-h3 {
     font-weight: var(--fw-base);
     color: var(--clr-primary);
     font-size: 30px;
-    margin-bottom: 75px;
 }
 
 .home-section .home-line {
@@ -43,21 +41,21 @@
     max-width: 90%;
     border-bottom: 7px solid var(--clr-accent);
     border-radius: var(--br-normal);
-    margin-bottom: 39px;
+    /* margin-bottom: 39px; */
 }
 
 .home-section .home-social {
     position: absolute;
-    left: 49px;
-    height: 100%;
+    left: 9%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding-top: 10px;
+    gap: 13px;
+    /* padding-top: 10px; */
 }
 
 .home-section .home-social .home-social-a {
-    margin-bottom: 13px;
+    /* margin-bottom: 13px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,13 +67,15 @@
     font-weight: var(--fw-light);
     color: var(--clr-primary);
     font-size: 20px;
-    margin-bottom: 51px;
+    /* margin-bottom: 51px; */
 }
 
 .home-section .home-scroll-img {
     cursor: pointer;
 }
-
+.JI_home_copyright {
+    display: none;
+}
 @media only screen and (max-width: 768px) {
     .home-section::before {
         background-image: url(./../imgs/background-1.png);
@@ -84,43 +84,46 @@
 
     .home-section .home-logo-img {
         display: block;
-        margin-top: 77px;
+        /* margin-top: 77px; */
     }
 
     .home-section .home-h1 {
-        margin-bottom: 14px;
-        margin-top: 35px;
+        /* margin-bottom: 14px; */
+        /* margin-top: 35px; */
         font-size: 24px;
     }
 
     .home-section .home-h3 {
         font-size: 16px;
-        margin-bottom: 26px;
+        /* margin-bottom: 26px; */
     }
 
     .home-section .home-line {
-        margin-bottom: 90px;
+        /* margin-bottom: 90px; */
         width: 70%;
         border-bottom: 3px solid var(--clr-accent);
     }
 
     .home-section .home-social {
-        position: initial;
+        position: relative;
+        left: 0;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 19px;
-        margin-bottom: 91px;
-        padding-top: 0;
+        gap: 36px;
     }
 
-    .home-section .home-social .home-social-a {
-        margin-bottom: 0;
+    .home-section .JI_home_acnhor {
+        display: none;
     }
-
     .home-section .home-p {
         display: none;
     }
-
-    
+    .JI_home_copyright {
+        display: block;
+        color: var(--alaa-dis-active-nav);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+    }     
 }

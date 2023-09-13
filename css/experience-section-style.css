@@ -1,13 +1,17 @@
 .experience-section .main-heading::before {
     content: "+10 Years";
 }
-
+.experience-section {
+    overflow-x: hidden;
+}
 .experience-section .container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 40px;
 }
-
+.experience-section .main-heading {
+    padding-top: 20px;
+}
 .experience-section .card .exp-title {
     display: flex;
     justify-content: space-between;
@@ -47,16 +51,72 @@
     cursor: pointer;
     white-space: nowrap;
 }
+.experience-section .container .arrow {
+    display: none;
+}
+
+.experience-section .experience_section_indicators {
+    display: none;
+  }
 
 @media(max-width:768px) {
-    .experience-section .main-heading::before {
-        content: "+10";
-    }
-
     .experience-section .container {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 250px;
+    }
+    .experience-section .container .card {
+        flex-shrink: 0;
+        width: 70%;
+        min-width: 300px;
+        padding: 18px;
+        border-radius: 8px;
+        background: var(--clr-neutral-300);
+        position: absolute;
+        transition: all 0.5s;
+        display: none;
     }
 
+    .experience-section .container .card.active {
+        transform: scale(1);
+        opacity: 1;
+        pointer-events: none;
+        display: block;
+    }
+    .experience-section .container .card.prev_card {
+        opacity: 0.5;
+        backdrop-filter: blur(2.5px);
+        transform: scale(0.8) translateX(-120%);
+        display: block;
+    }
+    .experience-section .container .card.next_card {
+        transform: scale(0.8) translateX(120%);
+        backdrop-filter: blur(2.5px);
+        opacity: 0.5;
+        display: block;
+    }
+    .experience-section .container .arrow {
+        display: block;
+        position: absolute;
+        width: 15px;
+        height: 30px;
+        cursor: pointer;
+        z-index: 1;
+    }
+    .experience-section .container .arrow.disabled {
+        display: none;
+    }
+    .experience-section .container .arrow.left {
+        left: 10%;
+    }
+    .experience-section .container .arrow.right {
+        right: 10%;
+    }
+    .experience-section .card .exp-title {
+        flex-direction: column;
+        align-items: center;
+    }
     .experience-section .card .exp-title h3 {
         font-size: 20px;
     }
@@ -67,5 +127,25 @@
 
     .experience-section .card .exp-info p {
         font-size: 13px;
+        text-align: center;
+    }
+    .experience-section .experience_section_indicators {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        margin-top: 16px;
+    }
+    .experience-section .experience_section_indicators .experience_section_indicators_span {
+        width: 15px;
+        height: 15px;
+        border: 2px solid var(--clr-accent);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+    .experience-section .experience_section_indicators .experience_section_indicators_span.active {
+        background-color: var(--clr-accent);
+        pointer-events: none;
     }
 }
