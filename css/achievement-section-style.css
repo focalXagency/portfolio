@@ -29,18 +29,9 @@
 
 .achievement-box {
   padding-left: 24px;
-  /* position: relative; */
   border-left: 2px solid var(--clr-accent);
 }
-/* .achievement-box::after {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 2px;
-  height: 100%;
-  background-color: var(--clr-accent);
-} */
+
 .achievement__header {
   margin-bottom: 18px;
   display: flex;
@@ -51,11 +42,11 @@
 }
 
 .achievement__header .achievement__date {
-  color: var(--alaa-main-color, #F9CC11);
+  color: var(--clr-accent);
   font-family: 'Inter';
   font-size: 16px;
   font-weight: 300;
-  line-height: 22px; /* 137.5% */
+  line-height: 22px;
 }
 
 .achievement__header .achievement__title {
@@ -82,18 +73,30 @@
   }
   .achievement-box {
     padding-left: 0;
-    /* position: relative; */
+    position: relative;
     border-left: none;
+    transition: all .5s;
+  }
+  .achievement-box::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    transition: all .5s;
+    background-color: var(--clr-accent);
   }
   .achievement-box.active {
-    border-left: 2px solid var(--clr-accent);
-    transition: all .5s ease-in-out;
     padding-left: 15px;
+  }
+  .achievement-box.active::before {
+    width: 2px;
+    height: 100%;
   }
   .achievement__header {
     flex-direction: row;
     position: relative;
-    /* padding-bottom: 10px; */
     padding: 0 40px 10px 0;
     border-bottom: 1px solid var(--clr-accent);
     cursor: pointer;
@@ -104,14 +107,12 @@
     position: absolute;
     content: "\002B";
     width: 20px;
-    transition: all .5s ease-in-out;
     height: 20px;
     border-radius: 2px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     right: 0;
-    font-size: 30px;
+    font-size: 25px;
+    line-height: 20px;
     color: var(--clr-background);
     background-color: var(--clr-accent);
   }
@@ -132,7 +133,7 @@
     line-height: 20px;
   }
   .achievement__header .achievement__date.active {
-    transition: all .5s ease-in-out;
+    transition: all .5s;
     color: var(--clr-accent);
   }
 
@@ -140,7 +141,7 @@
     max-height: 0;
     overflow: hidden;
     font-size: 1.3em;
-    transition: all .5s ease-in-out;
+    transition: all .5s;
     font-weight: var(--fw-light);
   }
   .achievement__body.active {
