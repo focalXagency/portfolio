@@ -3,7 +3,8 @@
     justify-content: center;
     flex-wrap: wrap-reverse;
     gap: 40px;
-    padding: 0 50px;
+    padding: 0 500px;
+    height: max-content !important;
 }
 
 .biography-section .main-content .description{
@@ -22,6 +23,30 @@
     object-fit: cover;
     object-position: top;
 }
+.Need-to-show
+{
+    display: none !important;
+}
+.text-container {
+    max-height: 100px; 
+    overflow: hidden; 
+    display: flex;
+  }
+  
+  .Need-to-show .read-more {
+    color: gold;
+  }
+  
+  .show-less {
+    display: none;
+    color:var(--clr-accent);
+  }
+  .FFFFF
+  {
+    display: none;
+    transition: 1s;
+    
+  }
 
 @media (max-width: 1150px) {
     .biography-section .main-content .description{
@@ -43,5 +68,12 @@
     .biography-section .main-content .description{
         line-height: 18px;
         font-size: 14px;
+    }
+    .Need-to-show
+    {
+        display: block !important;
+    }
+    .Need-to-disipeer{
+        display: none !important;
     }
 }

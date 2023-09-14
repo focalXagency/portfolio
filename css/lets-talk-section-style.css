@@ -1,8 +1,4 @@
 .bh-talk-section {
-    background-image: url(./../imgs/yellow-logo.png); 
-    background-position: center;
-    background-size: min(600px, 70%);
-    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,6 +23,7 @@
 .bh-talk-section .contact-box .message-box {
     display: flex;
     flex-direction: column;
+    
 }
 
 .bh-talk-section .contact-box .input-box input {
@@ -39,10 +36,17 @@
     width: 300px;
     margin: auto;
     margin-bottom: 10px;
+    height: 40px;
+    border-radius: 3px;
 }
 
 .bh-talk-section .contact-box .input-box input::placeholder {
     font-weight: var(--fw-semibold);
+    background-color: rgba(139, 138, 138, 0.281);
+    height: 100%;
+    backdrop-filter: blur(200px) !important;
+    text-align: center;
+    padding-top: 10px;
 }
 
 .bh-talk-section .contact-box .your-info {
@@ -56,6 +60,8 @@
 .bh-talk-section .contact-box .message-box {
     background: linear-gradient(102deg, var(--clr-primary-low-opacity), var(--clr-accent-content-low-opacity));
     border: 1px solid var(--clr-accent);
+    background-color: rgba(139, 138, 138, 0.13);
+    backdrop-filter: blur(200px) !important;
 }
 
 .bh-talk-section .contact-box .message-box h6 {
@@ -118,36 +124,36 @@
     color: var(--clr-accent-content);
     border: none;
 }
+.Footer .fq-lastFooter
+{
+    text-align: center;
+    padding: 15px 0 6px 0; 
+}
+.Footer h3
+{
+    width: max-content;
+    margin: 0 auto;
+}
 
-.bh-talk-section  ul.social-list {
+.Footer .fq-info
+{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    width: 80%;
+    margin: 20px auto;
+    justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
 }
-
-.bh-talk-section ul.social-list > li.list-item:not(:first-child) {
-    width: 32px;
-    height: 32px;
+.Footer .fq-info .fqin-11
+{
+    width: 200px;
+    text-align: center;
 }
-
-.bh-talk-section ul.social-list > li.list-item:not(:first-child) > a {
-    margin-bottom: 13px;
+.Footer .social-list {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 32px;
-    height: 32px;
-}
-
-.bh-talk-section ul.social-list > li:first-child {
-    font-size: 24px;
-}
-
-.bh-talk-section  ul.social-list .list-item-para {
-    border-right: 1px solid var(--clr-primary);
-    padding: 10px;
 }
 
 @media (max-width: 768px) {

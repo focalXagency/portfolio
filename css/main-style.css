@@ -51,6 +51,15 @@ body {
   min-height: 100vh;
 }
 
+.body-img {
+  background-image: url(./../imgs/baccckgroundalaa.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--clr-primary);
+  font-weight: var(--fw-base);
+  min-height: 100vh;
+}
+
 section {
   /* padding: 50px; */
   padding-top: 50px;
