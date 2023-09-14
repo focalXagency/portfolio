@@ -1,58 +1,45 @@
-const hum = document.querySelector(".hidden-menu-nav");
-const linksMob = document.querySelector(".links-list-nav-mobile");
+
 const st = document.querySelectorAll(".hidden-menu-nav .st");
 const navbar = document.querySelector("nav");
-const moblieLinks = document.querySelectorAll("header .link-nav-mob");
+const myLinks = document.querySelectorAll(".links-list-nav .link-nav a")
+const sections = document.querySelectorAll("section");
 
+const myBars = document.querySelector(".d-block-nav")
+const myUl = document.querySelector(".links-nav")
 
-hum.addEventListener("click", () => {
-    linksMob.classList.toggle("trans-0");
+myBars.addEventListener("click" , ()=> {
+    myUl.classList.toggle("active");
     st.forEach(s => {
         s.classList.toggle("w-40");
     });
-    handleNavbarColor();
-});
-
-moblieLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        linksMob.classList.remove("trans-0");
-    })
 })
 
-window.addEventListener("scroll", handleNavbarColor);
-handleNavbarColor();
+myLinks.forEach(a => {
+    a.addEventListener("click" , () => {
+        myBars.click();
+    })
+});
 
-function handleNavbarColor() {
-    if (window.scrollY !== 0 && !linksMob.classList.contains("trans-0")) {
-        navbar.style.backgroundColor = "var(--clr-background)";
-    } else {
-        navbar.style.backgroundColor = null;
+window.onscroll = function () {
+    let current;
+    sections.forEach((sec) => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop;    
+    if (top >= offset - 200) {
+      current = sec.getAttribute("id");
     }
-}
-const sections = document.querySelectorAll("section[id]");
-      window.addEventListener("scroll", navHighlighter);
-          
-      function navHighlighter() {
-        let scrollY = window.pageYOffset;
-        
-        sections.forEach(current => {
-          const sectionHeight = current.offsetHeight;
-          const sectionTop = current.offsetTop - 100;
-          let sectionId = current.getAttribute("id");
-                if (
-                  scrollY > sectionTop &&
-                  scrollY <= sectionTop + sectionHeight
-                  ){
-                    document.querySelectorAll("a[href*=" + sectionId + "]").forEach(element => {
-                        element.parentElement.classList.add("active-nav");
-                        element.parentElement.classList.add("active-mobile");
-                    });
-                  } else {
-                    document.querySelectorAll("a[href*=" + sectionId + "]").forEach(element => {
-                        if(element.parentElement.classList.contains("active-nav"))
-                        element.parentElement.classList.remove("active-nav");
-                        if(element.parentElement.classList.contains("active-mobile"))
-                        element.parentElement.classList.remove("active-mobile");
-                  })
-                }
-            })}
+    myLinks.forEach((a) => {
+      a.classList.remove("active-nav");
+      if (a.getAttribute("href") == `#${current}`) {
+        a.classList.add("active-nav");
+      }
+    });
+  });
+
+  if (scrollY > 400) {
+    navbar.classList.add("dark")
+    }
+    else {
+        navbar.classList.remove("dark")
+    }
+};
