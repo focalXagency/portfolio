@@ -71,6 +71,9 @@
   .achievements {
     gap: 16px;
   }
+  .achievements-section .main-heading {
+    padding-top: 20px;
+  }
   .achievement-box {
     padding-left: 0;
     position: relative;
