@@ -1,5 +1,8 @@
 .port-sec {
   overflow: hidden;
+  position: relative;
+  width: 90vw;
+  margin: 0 auto;
 }
 
 .port-sec .main-heading::before {
@@ -59,17 +62,17 @@
 }
 
 .port-sec .swiper-slide {
-  font-size: 18px;
+  font-size: 18px;  
 }
 
 .port-sec .port-c-cont {
-  max-width: 400px !important;
+  max-width: 100% !important;
   margin: auto;
 }
 
 .port-sec .swiper-slide img {
   display: block;
-  width: 400px;
+  width: 100%;
   max-height: 210px;
 }
 
@@ -88,6 +91,21 @@
   font-size: 16px;
   color: var(--clr-accent);
 }
+.port-sec .swiper-button-next,.port-sec .swiper-button-prev {
+  position: absolute;
+  top: var(--swiper-navigation-top-offset,65%);
+  width: 50px !important;
+  height: var(--swiper-navigation-size);
+  margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+  z-index: 134340;
+  cursor: pointer;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  color: gold;
+  font-weight: var(--fw-base);
+  font-size: 5rem !important;
+}
 
 @media(max-width: 768px) {
   .port-sec .swiper-slide {
@@ -100,6 +118,14 @@
 
   .port-sec .swiper {
     margin-top: 35px;
+  }
+  .port-sec .swiper-button-next{
+    top: -125px !important;
+    right: -20px !important;
+  }
+  .port-sec .swiper-button-prev{
+    top: -125px !important;
+    left: -20px !important;
   }
 }
 
@@ -115,8 +141,8 @@
 }
 
 .portfolio-contanier {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
   margin-left: auto;
   margin-right: auto;
 }

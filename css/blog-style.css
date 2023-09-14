@@ -1,0 +1,181 @@
+.blog-sec {
+    overflow: hidden;
+    position: relative;
+    width: 90vw;
+    margin: 0 auto;
+  }
+  
+  .blog-sec .main-heading::before {
+    content: "+40";
+  }
+  
+  .blog-sec .port-redu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    row-gap: 20px;
+  }
+  
+  .blog-sec .port-redu .redu {
+    margin: 0 30px;
+    cursor: pointer;
+    text-transform: capitalize;
+    opacity: 70%;
+    transition: .3s;
+    text-align: start;
+    position: relative;
+  }
+  
+  .blog-sec .port-redu .redu:hover {
+    opacity: 100%;
+  }
+  
+  .blog-sec .port-redu .redu.active {
+    opacity: 100%;
+  }
+  
+  .blog-sec .port-redu .redu::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: var(--clr-accent);
+    bottom: -5px;
+    left: 0;
+    transition: .3s;
+  }
+  
+  .blog-sec .port-redu .redu.active::after {
+    position: absolute;
+    content: "";
+    width: 80%;
+    height: 2px;
+    background-color: var(--clr-accent);
+    bottom: -5px;
+    left: 0;
+  }
+  
+  .blog-sec .swiper {
+    margin-top: 85px;
+  }
+  
+  .blog-sec .swiper-slide {
+    font-size: 18px;  
+  }
+  
+  .blog-sec .port-c-cont {
+    max-width: 100% !important;
+    height: 400px;
+    margin: auto;
+  }
+  
+  .blog-sec .swiper-slide img {
+    display: block;
+    width: 100%;
+    max-height: 100%;
+  }
+  
+  .blog-sec .blog-card-text {
+    background-color: #333333;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    padding: 16px;
+  }
+  .blog-sec .blog-card-text h2{
+    font-size: 22px;
+  }
+  .blog-sec .blog-card-text > p{
+    font-size: 14px;
+    width: 80%;
+    margin: 10px 0;
+    color: #878787;
+  }
+  .blog-sec .blog-card-text .blog-carf-lastone
+  {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .blog-sec .blog-card-text a {
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--clr-accent);
+  }
+  .blog-sec .swiper-button-next,.blog-sec .swiper-button-prev {
+    position: absolute;
+    top: var(--swiper-navigation-top-offset,65%);
+    width: 50px !important;
+    height: var(--swiper-navigation-size);
+    margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+    z-index: 134340;
+    cursor: pointer;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    color: gold;
+    font-weight: var(--fw-base);
+    font-size: 5rem !important;
+  }
+
+  .swiper-pagination {
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    text-align: center;
+    transition: .3s opacity;
+    transform: translate3d(0,0,0);
+    z-index: 10;
+}
+  
+  @media(max-width: 768px) {
+    .blog-sec .swiper-slide {
+      font-size: 14px;
+    }
+  
+    .blog-sec .port-redu .redu {
+      font-size: 12px;
+    }
+  
+    .blog-sec .swiper {
+      margin-top: 35px;
+    }
+    .blog-sec .swiper-button-next{
+      top: -175px !important;
+      right: -20px !important;
+    }
+    .blog-sec .swiper-button-prev{
+      top: -175px !important;
+      left: -20px !important;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .blog-sec .port-redu {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .blog-sec .port-redu .redu {
+      white-space: nowrap;
+    }
+    .blog-sec .blog-card-text h2{
+      font-size: 16px;
+    }
+  }
+  
+  .portfolio-contanier {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
